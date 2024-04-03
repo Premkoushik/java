@@ -1,0 +1,23 @@
+public class Great {
+    public static void main(String[] args) {
+        int[] numbers = {10, 5, 7, 22, 14, 9, 3, 17, 8, 12};
+        int greatest = findGreatestNumber(numbers);
+        System.out.println("The greatest number in the array is: " + greatest);
+    }
+
+    public static int findGreatestNumber(int[] arr) {
+        if (arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+
+        int greatest = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > greatest) {
+                greatest = arr[i];
+            }
+        }
+
+        return greatest;
+    }
+}

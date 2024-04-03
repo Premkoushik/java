@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class fact {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a non-negative integer: ");
+        int n = scanner.nextInt();
+
+        if (n < 0) {
+            System.out.println("Factorial is not defined for negative numbers.");
+        } else {
+            long factorial = findFactorial(n);
+            System.out.println("Factorial of " + n + " is: " + factorial);
+        }
+
+        scanner.close();
+    }
+
+    public static long findFactorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * findFactorial(n - 1);
+        }
+    }
+}
